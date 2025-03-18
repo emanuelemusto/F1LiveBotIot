@@ -6,21 +6,7 @@ Also for testing reason this bot can simulate a past race to see times and posit
 
 ## System Architecture
 
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│                 │     │                 │     │                 │     │                 │
-│   F1 Producer   │────▶│    RabbitMQ     │────▶│  Nuclio Function│────▶│  Telegram Bot   │
-│                 │     │                 │     │                 │     │                 │
-└─────────────────┘     └─────────────────┘     └─────────────────┘     └─────────────────┘
-        │                                                                        │
-        │                                                                        │
-        ▼                                                                        ▼
-┌─────────────────┐                                                    ┌─────────────────┐
-│                 │                                                    │                 │
-│   FastF1 API    │                                                    │   Telegram API  │
-│                 │                                                    │                 │
-└─────────────────┘                                                    └─────────────────┘
-```
+![architecture](./media/Architecture.svg)
 
 ## Prerequisites
 
