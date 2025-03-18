@@ -1,6 +1,8 @@
 # F1 Live Timetable System Deployment Guide
 
 A real-time Formula 1 race data tracking system that fetches lap times and race standings, processes them through a message queue, and delivers updates to Telegram.
+Also for testing reason this bot can simulate a past race to see times and position of that race
+
 
 ## System Architecture
 
