@@ -72,7 +72,7 @@ Remember to update my_token and my_telegram_ID and rabbitmq url, you can check r
 ## Configuration Options
 
 | Environment Variable | Description |
-| --- | --- | --- |
+| --- | --- |
 | `TELEGRAM_BOT_TOKEN` | Your Telegram bot API token |
 | `TELEGRAM_CHAT_ID` | ID of the Telegram chat to send messages to |
 | `CHECK_INTERVAL` | Time between updates in seconds |
