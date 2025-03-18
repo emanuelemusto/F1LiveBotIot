@@ -50,7 +50,7 @@ Also for testing reason this bot can simulate a past race to see times and posit
    docker-compose logs -f
    ```
 
-5. Connect to localhost:8070 and, after creating a new project, create a new function importing the function.yaml file 
+5. Connect to localhost:8070 and, after creating a new project, create a new function importing the function.yaml file present in nuclio folder
 Remember to update my_token and my_telegram_ID and rabbitmq url, you can check rabbitmq url by running this line:
    ```bash
    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' f1livebot1-rabbitmq-1
