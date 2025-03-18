@@ -21,7 +21,7 @@ Also for testing reason this bot can simulate a past race to see times and posit
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/emanuelemusto/F1LiveBotIot/tree/main
+   git clone https://github.com/emanuelemusto/F1LiveBotIot.git
    cd F1LiveBotIot
    ```
 
