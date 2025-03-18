@@ -21,8 +21,8 @@ Also for testing reason this bot can simulate a past race to see times and posit
 
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
-   cd f1-live-timetable
+   git clone https://github.com/emanuelemusto/F1LiveBotIot/tree/main
+   cd F1LiveBotIot
    ```
 
 2. Create a `.env` file in the project root with your configuration:
