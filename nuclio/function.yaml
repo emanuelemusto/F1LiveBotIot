@@ -8,9 +8,9 @@ spec:
   runtime: "python:3.9"
   env:
     - name: TELEGRAM_BOT_TOKEN
-      value: "TELEGRAM_BOT_TOKEN"
+      value: ""
     - name: TELEGRAM_CHAT_ID
-      value: "TELEGRAM_CHAT_ID"
+      value: ""
   resources:
     requests:
       cpu: 25m
@@ -25,17 +25,17 @@ spec:
       name: default-http
       numWorkers: 1
       maxWorkers: 1
-    rabbitmq:
+    f1livebot1-rabbitmq-1:
       class: ""
       kind: rabbit-mq
-      name: rabbitmq
-      url: "amqp://guest:guest@172.17.0.3:5672"
+      name: f1livebot1-rabbitmq-1
+      url: "amqp://guest:guest@172.19.0.2:5672"
       attributes:
         exchangeName: f1_timetable
         queueName: f1_timetable_queue
   version: 1
   build:
-    functionSourceCode: aW1wb3J0IHRlbGVib3QNCmltcG9ydCBwaWthDQppbXBvcnQganNvbg0KZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZXRpbWUNCmltcG9ydCBvcw0KDQojIFRlbGVncmFtIGNyZWRlbnRpYWxzDQpteV90b2tlbiA9IG9zLmdldGVudigiVEVMRUdSQU1fQk9UX1RPS0VOIikNCm15X3RlbGVncmFtX0lEID0gb3MuZ2V0ZW52KCJURUxFR1JBTV9DSEFUX0lEIikNCg0KYm90ID0gdGVsZWJvdC5UZWxlQm90KG15X3Rva2VuKQ0KbGFzdF9tZXNzYWdlX2lkID0gTm9uZQ0KDQojIFJhYmJpdE1RIHNldHVwDQpwYXJhbXMgPSBwaWthLkNvbm5lY3Rpb25QYXJhbWV0ZXJzKGhvc3Q9IjE3Mi4xNy4wLjMiKQ0KY29ubmVjdGlvbiA9IHBpa2EuQmxvY2tpbmdDb25uZWN0aW9uKHBhcmFtcykNCmNoYW5uZWwgPSBjb25uZWN0aW9uLmNoYW5uZWwoKQ0KDQpjaGFubmVsLnF1ZXVlX2RlY2xhcmUocXVldWU9J2YxX3RpbWV0YWJsZV9xdWV1ZScpDQpjaGFubmVsLmV4Y2hhbmdlX2RlY2xhcmUoZXhjaGFuZ2U9J2YxX3RpbWV0YWJsZScsIGV4Y2hhbmdlX3R5cGU9J2RpcmVjdCcpDQpjaGFubmVsLnF1ZXVlX2JpbmQoZXhjaGFuZ2U9J2YxX3RpbWV0YWJsZScsIHF1ZXVlPSJmMV90aW1ldGFibGVfcXVldWUiKQ0KDQpkZWYgc2VuZF9vcl91cGRhdGVfdGltZXRhYmxlKHRpbWV0YWJsZV9tZXNzYWdlKToNCiAgICBnbG9iYWwgbGFzdF9tZXNzYWdlX2lkDQogICAgaWYgbGFzdF9tZXNzYWdlX2lkOg0KICAgICAgICB0cnk6DQogICAgICAgICAgICBib3QuZWRpdF9tZXNzYWdlX3RleHQoY2hhdF9pZD1teV90ZWxlZ3JhbV9JRCwgbWVzc2FnZV9pZD1sYXN0X21lc3NhZ2VfaWQsIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRleHQ9dGltZXRhYmxlX21lc3NhZ2UsIHBhcnNlX21vZGU9Ik1hcmtkb3duIikNCiAgICAgICAgICAgIHJldHVybg0KICAgICAgICBleGNlcHQ6DQogICAgICAgICAgICBsYXN0X21lc3NhZ2VfaWQgPSBOb25lDQogICAgbWVzc2FnZSA9IGJvdC5zZW5kX21lc3NhZ2UobXlfdGVsZWdyYW1fSUQsIHRpbWV0YWJsZV9tZXNzYWdlLCBwYXJzZV9tb2RlPSJNYXJrZG93biIpDQogICAgbGFzdF9tZXNzYWdlX2lkID0gbWVzc2FnZS5tZXNzYWdlX2lkDQoNCmRlZiBoYW5kbGVyKGNvbnRleHQsIGV2ZW50KToNCiAgICBjb250ZXh0LmxvZ2dlci5pbmZvKCdQcm9jZXNzaW5nIEYxIGV2ZW50IHVwZGF0ZScpDQogICAgDQogICAgcmVzID0ganNvbi5sb2FkcyhldmVudC5ib2R5LmRlY29kZSgpKQ0KICAgIA0KICAgIGlmIG5vdCByZXM6DQogICAgICAgIHNlbmRfb3JfdXBkYXRlX3RpbWV0YWJsZSgiTm8gbGl2ZSBGMSBzZXNzaW9ucyBjdXJyZW50bHkuIikNCiAgICAgICAgcmV0dXJuDQogICAgDQogICAgY29udGV4dC5sb2dnZXIuaW5mbyhyZXMpDQogICAgDQogICAgc2VuZF9vcl91cGRhdGVfdGltZXRhYmxlKHJlcykNCg==
+    functionSourceCode: aW1wb3J0IHRlbGVib3QNCmltcG9ydCBwaWthDQppbXBvcnQganNvbg0KZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZXRpbWUNCmltcG9ydCBvcw0KDQojIFRlbGVncmFtIGNyZWRlbnRpYWxzDQpteV90b2tlbiA9IG9zLmdldGVudigiVEVMRUdSQU1fQk9UX1RPS0VOIikNCm15X3RlbGVncmFtX0lEID0gb3MuZ2V0ZW52KCJURUxFR1JBTV9DSEFUX0lEIikNCg0KYm90ID0gdGVsZWJvdC5UZWxlQm90KG15X3Rva2VuKQ0KbGFzdF9tZXNzYWdlX2lkID0gTm9uZQ0KDQojIFJhYmJpdE1RIHNldHVwDQpwYXJhbXMgPSBwaWthLkNvbm5lY3Rpb25QYXJhbWV0ZXJzKGhvc3QgPSAiMTcyLjE5LjAuMiIsIHBvcnQgPSA1NjcyKQ0KY29ubmVjdGlvbiA9IHBpa2EuQmxvY2tpbmdDb25uZWN0aW9uKHBhcmFtcykNCmNoYW5uZWwgPSBjb25uZWN0aW9uLmNoYW5uZWwoKQ0KDQpjaGFubmVsLnF1ZXVlX2RlY2xhcmUocXVldWU9J2YxX3RpbWV0YWJsZV9xdWV1ZScpDQpjaGFubmVsLmV4Y2hhbmdlX2RlY2xhcmUoZXhjaGFuZ2U9J2YxX3RpbWV0YWJsZScsIGV4Y2hhbmdlX3R5cGU9J2RpcmVjdCcpDQpjaGFubmVsLnF1ZXVlX2JpbmQoZXhjaGFuZ2U9J2YxX3RpbWV0YWJsZScsIHF1ZXVlPSJmMV90aW1ldGFibGVfcXVldWUiKQ0KDQpkZWYgc2VuZF9vcl91cGRhdGVfdGltZXRhYmxlKHRpbWV0YWJsZV9tZXNzYWdlKToNCiAgICBnbG9iYWwgbGFzdF9tZXNzYWdlX2lkDQogICAgaWYgbGFzdF9tZXNzYWdlX2lkOg0KICAgICAgICB0cnk6DQogICAgICAgICAgICBib3QuZWRpdF9tZXNzYWdlX3RleHQoY2hhdF9pZD1teV90ZWxlZ3JhbV9JRCwgbWVzc2FnZV9pZD1sYXN0X21lc3NhZ2VfaWQsIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRleHQ9dGltZXRhYmxlX21lc3NhZ2UsIHBhcnNlX21vZGU9Ik1hcmtkb3duIikNCiAgICAgICAgICAgIHJldHVybg0KICAgICAgICBleGNlcHQ6DQogICAgICAgICAgICBsYXN0X21lc3NhZ2VfaWQgPSBOb25lDQogICAgbWVzc2FnZSA9IGJvdC5zZW5kX21lc3NhZ2UobXlfdGVsZWdyYW1fSUQsIHRpbWV0YWJsZV9tZXNzYWdlLCBwYXJzZV9tb2RlPSJNYXJrZG93biIpDQogICAgbGFzdF9tZXNzYWdlX2lkID0gbWVzc2FnZS5tZXNzYWdlX2lkDQoNCmRlZiBoYW5kbGVyKGNvbnRleHQsIGV2ZW50KToNCiAgICBjb250ZXh0LmxvZ2dlci5pbmZvKCdQcm9jZXNzaW5nIEYxIGV2ZW50IHVwZGF0ZScpDQogICAgDQogICAgcmVzID0ganNvbi5sb2FkcyhldmVudC5ib2R5LmRlY29kZSgpKQ0KICAgIA0KICAgIGlmIG5vdCByZXM6DQogICAgICAgIHNlbmRfb3JfdXBkYXRlX3RpbWV0YWJsZSgiTm8gbGl2ZSBGMSBzZXNzaW9ucyBjdXJyZW50bHkuIikNCiAgICAgICAgcmV0dXJuDQogICAgDQogICAgY29udGV4dC5sb2dnZXIuaW5mbyhyZXMpDQogICAgDQogICAgc2VuZF9vcl91cGRhdGVfdGltZXRhYmxlKHJlcykNCg==
     commands:
       - 'pip install pika'
       - 'pip install tabulate'
@@ -44,10 +44,16 @@ spec:
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1742254832
+    timestamp: 1742334033
+    image: ""
+    noCache: false
+    offline: false
+    dependencies: []
   loggerSinks:
     - level: debug
-  platform: {}
+  platform:
+    attributes:
+      network: nuclio-network
   securityContext: {}
   disableDefaultHTTPTrigger: false
   eventTimeout: ""
