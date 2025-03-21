@@ -1,24 +1,12 @@
 # F1 Live Timetable System Deployment Guide
 
 A real-time Formula 1 race data tracking system that fetches lap times and race standings, processes them through a message queue, and delivers updates to Telegram.
+Also for testing reason this bot can simulate a past race to see times and position of that race
+
 
 ## System Architecture
 
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│                 │     │                 │     │                 │     │                 │
-│   F1 Producer   │────▶│    RabbitMQ     │────▶│  Nuclio Function│────▶│  Telegram Bot   │
-│                 │     │                 │     │                 │     │                 │
-└─────────────────┘     └─────────────────┘     └─────────────────┘     └─────────────────┘
-        │                                                                        │
-        │                                                                        │
-        ▼                                                                        ▼
-┌─────────────────┐                                                    ┌─────────────────┐
-│                 │                                                    │                 │
-│   FastF1 API    │                                                    │   Telegram API  │
-│                 │                                                    │                 │
-└─────────────────┘                                                    └─────────────────┘
-```
+![architecture](./media/Architecture.svg)
 
 ## Prerequisites
 
@@ -33,8 +21,8 @@ A real-time Formula 1 race data tracking system that fetches lap times and race 
 
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
-   cd f1-live-timetable
+   git clone https://github.com/emanuelemusto/F1LiveBotIot.git
+   cd F1LiveBotIot
    ```
 
 2. Create a `.env` file in the project root with your configuration:
@@ -62,7 +50,7 @@ A real-time Formula 1 race data tracking system that fetches lap times and race 
    docker-compose logs -f
    ```
 
-5. Connect to localhost:8070 and, after creating a new project, create a new function importing the function.yaml file 
+5. Connect to localhost:8070 and, after creating a new project, create a new function importing the function.yaml file present in nuclio folder
 Remember to update my_token and my_telegram_ID and rabbitmq url, you can check rabbitmq url by running this line:
    ```bash
    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' f1livebot1-rabbitmq-1
@@ -72,7 +60,7 @@ Remember to update my_token and my_telegram_ID and rabbitmq url, you can check r
 ## Configuration Options
 
 | Environment Variable | Description |
-| --- | --- | --- |
+| --- | --- |
 | `TELEGRAM_BOT_TOKEN` | Your Telegram bot API token |
 | `TELEGRAM_CHAT_ID` | ID of the Telegram chat to send messages to |
 | `CHECK_INTERVAL` | Time between updates in seconds |
