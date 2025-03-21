@@ -100,3 +100,7 @@ Adjust the `create_timetable` function to change the formatting of the race upda
 
 ### Additional Notification Channels
 Create new Nuclio functions to send updates to other platforms (Slack, Discord, etc.)
+
+## Demo
+https://github.com/user-attachments/assets/21fd45cf-b7f0-4cd8-9ec9-d8f58c8a803b
+
